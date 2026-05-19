@@ -28,7 +28,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
     try {
       setIsSubmitting(true);
 
-      const BOT_TOKEN = '8378394328:AAFAnuOH0hBLexmFk3dgDeo5Cv-rMpKHqQc';
+      const BOT_TOKEN = '8378394328:AAGqUIZ6m8jtYG4IdsA7ei9kjoMFioyheYQ';
 
       const CHAT_IDS = [
         '1182845907',
@@ -62,9 +62,13 @@ export const LeadModal: React.FC<LeadModalProps> = ({
           }
         );
 
-        if (!response.ok) {
-          throw new Error('Ошибка отправки');
-        }
+if (!response.ok) {
+  const errorData = await response.text();
+
+  console.error('Telegram Error:', errorData);
+
+  throw new Error(errorData);
+}
       }
 
       setIsSubmitted(true);
@@ -74,7 +78,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
       setCity('');
       setProblem('');
     } catch (error) {
-      console.error(error);
+      console.error('FULL ERROR:', error);
       setSubmitError('Ошибка отправки заявки');
     } finally {
       setIsSubmitting(false);
