@@ -28,11 +28,6 @@ export const LeadModal: React.FC<LeadModalProps> = ({
     try {
       setIsSubmitting(true);
 
-      const BOT_TOKEN = '8378394328:AAGqUIZ6m8jtYG4IdsA7ei9kjoMFioyheYQ';
-
-      const CHAT_IDS = [
-        '1182845907',
-        '483889693',
       ];
 
       const text = `
@@ -46,22 +41,23 @@ export const LeadModal: React.FC<LeadModalProps> = ({
 🌐 Сайт: crimearepair.ru
 ⏰ ${new Date().toLocaleString()}
 `;
+      const response = await fetch('/send.php', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    name,
+    phone,
+    city,
+    problem,
+  }),
+});
 
-for (const chatId of CHAT_IDS) {
-  const url =
-    `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage` +
-    `?chat_id=${chatId}` +
-    `&text=${encodeURIComponent(text)}`;
+const data = await response.json();
 
-  const response = await fetch(url);
-
-  const data = await response.json();
-
-  console.log(data);
-
-  if (!data.ok) {
-    throw new Error(data.description || 'Ошибка Telegram');
-  }
+if (!data.success) {
+  throw new Error('Ошибка отправки');
 }
 
       setIsSubmitted(true);
