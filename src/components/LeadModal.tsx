@@ -14,6 +14,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [problem, setProblem] = useState('');
+  const [city, setCity] = useState('');
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -39,6 +40,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
 
 👤 Имя: ${name}
 📞 Телефон: ${phone}
+🏙 Город: ${city}
 🛠 Проблема: ${problem || 'Не указана'}
 
 🌐 Сайт: crimearepair.ru
@@ -69,6 +71,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
 
       setName('');
       setPhone('');
+      setCity('');
       setProblem('');
     } catch (error) {
       console.error(error);
@@ -147,6 +150,14 @@ export const LeadModal: React.FC<LeadModalProps> = ({
                     placeholder="+7 (___) ___-__-__"
                     className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none"
                   />
+                  <input
+  required
+  type="text"
+  value={city}
+  onChange={(e) => setCity(e.target.value)}
+  placeholder="Ваш город"
+  className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none"
+/>
 
                   <textarea
                     rows={3}
