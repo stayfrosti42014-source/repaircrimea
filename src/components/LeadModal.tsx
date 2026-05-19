@@ -47,29 +47,22 @@ export const LeadModal: React.FC<LeadModalProps> = ({
 ⏰ ${new Date().toLocaleString()}
 `;
 
-      for (const chatId of CHAT_IDS) {
-        const response = await fetch(
-          `https://corsproxy.io/?https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              chat_id: chatId,
-              text,
-            }),
-          }
-        );
+for (const chatId of CHAT_IDS) {
+  const url =
+    `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage` +
+    `?chat_id=${chatId}` +
+    `&text=${encodeURIComponent(text)}`;
 
-if (!response.ok) {
-  const errorData = await response.text();
+  const response = await fetch(url);
 
-  console.error('Telegram Error:', errorData);
+  const data = await response.json();
 
-  throw new Error(errorData);
+  console.log(data);
+
+  if (!data.ok) {
+    throw new Error(data.description || 'Ошибка Telegram');
+  }
 }
-      }
 
       setIsSubmitted(true);
 
