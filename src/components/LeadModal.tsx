@@ -49,7 +49,7 @@ export const LeadModal: React.FC<LeadModalProps> = ({
 
       for (const chatId of CHAT_IDS) {
         const response = await fetch(
-          `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+          `https://corsproxy.io/?https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
           {
             method: 'POST',
             headers: {
