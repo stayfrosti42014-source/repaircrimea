@@ -28,7 +28,6 @@ export const LeadModal: React.FC<LeadModalProps> = ({
     try {
       setIsSubmitting(true);
 
-      ];
 
       const text = `
 🔧 Новая заявка CrimeaRepair
