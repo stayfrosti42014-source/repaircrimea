@@ -28,11 +28,11 @@ export const LeadModal: React.FC<LeadModalProps> = ({
     try {
       setIsSubmitting(true);
 
-      const BOT_TOKEN = '8378394328:AAFAnuOH0hBLexmFk3dgDeo5Cv-rMpKHqQc;
+      const BOT_TOKEN = '8378394328:AAFAnuOH0hBLexmFk3dgDeo5Cv-rMpKHqQc';
 
       const CHAT_IDS = [
-        1182845907,
-        483889693,
+        '1182845907',
+        '483889693',
       ];
 
       const text = `
