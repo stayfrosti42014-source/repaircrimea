@@ -1,5 +1,6 @@
 import React from 'react';
-import { Settings, Send, Phone } from 'lucide-react';
+import { Send, Phone } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 interface HeaderProps {
   onNavItemClick?: (href: string) => void;
