@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = () => {
           <div className="flex items-center gap-4">
 
             <div className="relative flex items-center justify-center">
-              <div className="relative flex items-center justify-center">
+            
   <img
     src="/logo.png"
     alt="КРЫМ.СЕРВИС"
