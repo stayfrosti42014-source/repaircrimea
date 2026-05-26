@@ -585,16 +585,14 @@ export default function App() {
               </AnimatePresence>
 
               <div className="aspect-[21/10] w-full bg-slate-100 rounded-2xl relative overflow-hidden">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1419409.049458992!2d32.744158499999996!3d45.068222949999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ea674ec2575ed1%3A0xe7264a7c06eb7058!2z0JrRgNGL0Lw!5e0!3m2!1sru!2sru!4v1714800000000!5m2!1sru!2sru" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen={true} 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="grayscale hover:grayscale-0 transition-all duration-700"
-                ></iframe>
+              <iframe
+  src="https://yandex.ru/map-widget/v1/?um=constructor%3A6c8dfd4c7d3f2d8b9f4c7a6b3d2f1e0c5a9b8d7e6f5c4b3a2d1e0f9a8b7c6d5&amp;source=constructor"
+  width="100%"
+  height="450"
+  frameBorder="0"
+  allowFullScreen
+  className="rounded-3xl w-full"
+/>
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-4 rounded-xl border border-slate-100 shadow-lg pointer-events-none hidden md:block">
                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Города выезда</p>
                   <ul className="text-xs text-slate-700 font-medium space-y-1">
