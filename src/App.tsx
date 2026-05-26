@@ -98,12 +98,11 @@ const INTERACTIVE_SERVICES = [
   {
     id: 'cleaning',
     name: 'Клининг',
-    price: '3000',
+    price: '2000',
     faults: 'Уборка после ремонта · Генеральная уборка',
     faultsList: [
       { name: 'Уборка после ремонта', price: 'по договоренности' },
       { name: 'Генеральная уборка', price: 'по договоренности' },
-      { name: 'Мытьё окон', price: 'по договоренности' }
     ],
     image: '/assets/cleaning.webp'
   }
