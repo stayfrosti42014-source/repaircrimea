@@ -30,14 +30,13 @@ export const Header: React.FC<HeaderProps> = () => {
           <div className="flex items-center gap-4">
 
             <div className="relative flex items-center justify-center">
-              <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full"></div>
-
-              <img
-                src="/logo.png"
-                alt="КРЫМ.СЕРВИС"
-                className="relative h-14 w-14 object-contain drop-shadow-lg"
-              />
-            </div>
+              <div className="relative flex items-center justify-center">
+  <img
+    src="/logo.png"
+    alt="КРЫМ.СЕРВИС"
+    className="h-14 w-14 object-contain drop-shadow-lg"
+  />
+</div>
 
             <div className="flex flex-col leading-tight">
               <span className="text-2xl font-extrabold tracking-tight text-blue-600">
