@@ -1,6 +1,5 @@
 import React from 'react';
 import { Send, Phone } from 'lucide-react';
-import logo from '../public/logo.png';
 
 interface HeaderProps {
   onNavItemClick?: (href: string) => void;
@@ -34,7 +33,7 @@ export const Header: React.FC<HeaderProps> = () => {
               <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full"></div>
 
               <img
-                src={logo}
+                src="/logo.png"
                 alt="КРЫМ.СЕРВИС"
                 className="relative h-14 w-14 object-contain drop-shadow-lg"
               />
