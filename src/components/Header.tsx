@@ -22,7 +22,11 @@ export const Header: React.FC<HeaderProps> = () => {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white">
-              <Settings size={20} />
+             <img
+  src={logo}
+  alt="CrimeaRepair"
+  className="h-12 w-auto"
+/>
             </div>
             <span className="text-xl font-bold tracking-tight text-blue-600">
               КРЫМ.СЕРВИС
